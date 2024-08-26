@@ -6,11 +6,16 @@ import crane from '../../assets/images/crane.png';
 import { FC } from 'react';
 import { Title } from '../../components/elements/Title';
 import { Slider } from '../../components/elements/Slider';
-import { worksData } from '../../config/constants';
 import { ImageTextHorizontalContainer } from '../../components/elements/ImageTextHorizontalContainer';
 import { SkeletonImageContainer } from '../../components/elements/SkeletonImageContainer';
+import { useTop } from './useTop';
 
 export const Top: FC = () => {
+  const { data: worksData, loading, error } = useTop();
+
+  if (loading) return <Box w={'100vw'} h={'100vh'} />;
+  if (error) return <Text>Error: {error.message}</Text>;
+
   return (
     <Box textAlign="center" maxW={1280} mx="auto">
       <section>
@@ -55,7 +60,7 @@ export const Top: FC = () => {
 
           <Box mx={'auto'} w={'100%'} maxW={'768px'}>
             <Box mt={8}>
-              <Slider slides={worksData} />
+              <Slider slides={worksData ?? []} />
             </Box>
           </Box>
         </Box>
