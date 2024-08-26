@@ -1,34 +1,40 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
-import './App.css';
+import { BrowserRouter as Router, useLocation } from 'react-router-dom';
+import { AppRoutes } from './routes';
+import { useEffect } from 'react';
+import { ParallaxProvider } from 'react-scroll-parallax';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
 function App() {
-  const [count, setCount] = useState(0);
+  const ScrollToHash = () => {
+    const location = useLocation();
+
+    useEffect(() => {
+      // ページ遷移後にスクロール処理を遅延させる
+      setTimeout(() => {
+        if (location.hash) {
+          const element = document.getElementById(
+            location.hash.replace('#', ''),
+          );
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        } else {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      }, 0); // setTimeoutを使って、レンダリングが完了した後にスクロールする
+    }, [location]);
+    return null;
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank" rel="noreferrer">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount(count => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <Router>
+      <ScrollToHash />
+      <ParallaxProvider>
+        <AppRoutes />
+      </ParallaxProvider>
+    </Router>
   );
 }
 
