@@ -58,7 +58,7 @@ export const Profile: FC = () => {
               <Text>ライブラリ: React / Vue2 / jQuery</Text>
             </ListItem>
             <ListItem>
-              <Text>UI: ChakraUI / Vuetify / Bootstrap</Text>
+              <Text>UI: ChakraUI / Vuetify</Text>
             </ListItem>
             <ListItem>
               <Text>API: GraphQL / RestAPI</Text>

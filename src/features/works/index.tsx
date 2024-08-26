@@ -1,17 +1,21 @@
 import { Box, Link, Text, VStack } from '@chakra-ui/react';
 import { FC } from 'react';
 import { Title } from '../../components/elements/Title';
-import { worksData } from '../../config/constants';
 import { ImageTextHorizontalContainer } from '../../components/elements/ImageTextHorizontalContainer';
 import { TextArrowContainer } from '../../components/elements/TextArrowContainer';
 import { SkeletonImageContainer } from '../../components/elements/SkeletonImageContainer';
+import { useWorks } from './useWorks';
 
 export const Works: FC = () => {
+  const { data: worksData, loading, error } = useWorks();
+
+  if (loading) return <Box w={'100vw'} h={'100vh'} />;
+  if (error) return <Text>Error: {error.message}</Text>;
   return (
     <Box textAlign="center" maxW={1280} mx="auto">
       <Title title="WORKS" />
 
-      {worksData.map((data, index) => (
+      {worksData?.map((data, index) => (
         <ImageTextHorizontalContainer key={index} reverse={index % 2 !== 0}>
           <VStack align="center" spacing={1}>
             <Link
