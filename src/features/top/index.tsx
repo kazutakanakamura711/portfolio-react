@@ -6,7 +6,6 @@ import crane from '../../assets/images/crane.png';
 import { FC } from 'react';
 import { Title } from '../../components/elements/Title';
 import { Slider } from '../../components/elements/Slider';
-// import { worksData } from '../../config/constants';
 import { ImageTextHorizontalContainer } from '../../components/elements/ImageTextHorizontalContainer';
 import { SkeletonImageContainer } from '../../components/elements/SkeletonImageContainer';
 import { useTop } from './useTop';
