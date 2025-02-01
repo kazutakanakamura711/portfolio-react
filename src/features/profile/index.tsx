@@ -10,7 +10,7 @@ import {
   UnorderedList,
 } from '@chakra-ui/react';
 import { Title } from '../../components/elements/Title';
-import { FaInstagram, FaTwitter } from 'react-icons/fa';
+import { FaInstagram, FaXTwitter } from 'react-icons/fa6';
 import { FC } from 'react';
 import { SkeletonImageContainer } from '../../components/elements/SkeletonImageContainer';
 
@@ -27,7 +27,13 @@ export const Profile: FC = () => {
           <Text fontSize="md">フロントエンドエンジニア</Text>
         </Box>
 
-        <Box p={8} bg={'whiteAlpha.700'} textAlign={'left'} w={'100%'}>
+        <Box
+          p={8}
+          bg={'whiteAlpha.700'}
+          textAlign={'left'}
+          w={'100%'}
+          boxShadow="xl"
+        >
           <Heading as="h3" size="sm" mb={4}>
             経歴概要
           </Heading>
@@ -46,7 +52,13 @@ export const Profile: FC = () => {
           </Text>
         </Box>
 
-        <Box p={8} bg={'whiteAlpha.700'} textAlign={'left'} w={'100%'}>
+        <Box
+          p={8}
+          bg={'whiteAlpha.700'}
+          textAlign={'left'}
+          w={'100%'}
+          boxShadow="xl"
+        >
           <Heading as="h3" size="sm" mb={4}>
             スキルセット
           </Heading>
@@ -55,7 +67,7 @@ export const Profile: FC = () => {
               <Text>言語: TypeScript / JavaScript</Text>
             </ListItem>
             <ListItem>
-              <Text>ライブラリ: React / Vue2 / jQuery</Text>
+              <Text>フレームワーク・ライブラリ: React / Angular / Vue2</Text>
             </ListItem>
             <ListItem>
               <Text>UI: ChakraUI / Vuetify</Text>
@@ -72,7 +84,13 @@ export const Profile: FC = () => {
           </UnorderedList>
         </Box>
 
-        <Box p={8} bg={'whiteAlpha.700'} textAlign={'left'} w={'100%'}>
+        <Box
+          p={8}
+          bg={'whiteAlpha.700'}
+          textAlign={'left'}
+          w={'100%'}
+          boxShadow="xl"
+        >
           <Heading as="h3" size="sm" mb={4}>
             お問い合わせ
           </Heading>
@@ -82,8 +100,8 @@ export const Profile: FC = () => {
               href="https://twitter.com/Kazutak55541061"
               target="_blank"
               aria-label="X"
-              icon={<FaTwitter />}
-              colorScheme="twitter"
+              icon={<FaXTwitter />}
+              colorScheme="gray"
               size="lg"
               isRound
             />
