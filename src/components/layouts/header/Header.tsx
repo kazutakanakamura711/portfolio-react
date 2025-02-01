@@ -13,12 +13,16 @@ import {
   Link,
   ListItem,
   UnorderedList,
+  Heading,
+  Img,
+  HStack,
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import { FC } from 'react';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { publicRoutes } from '../../../routes/publicRoutes';
+import logo from '../../../assets/images/logo.svg';
 
 export const Header: FC = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -60,14 +64,32 @@ export const Header: FC = () => {
       {/* Desktop Menu */}
       <Flex
         as="nav"
-        justify="space-around"
+        justify="space-between"
+        alignItems="center"
         display={{ base: 'none', md: 'flex' }}
       >
+        <HStack spacing={2} align="center">
+          <Box w={10}>
+            <Img src={logo} />
+          </Box>
+          <Link
+            onClick={() => handleNavigation('/')}
+            textDecoration="none"
+            color="black"
+            fontWeight="bold"
+            fontSize="lg"
+            textShadow="1px 1px 0 white, -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white"
+            _hover={{ textDecoration: 'none' }}
+          >
+            Interact Infinite
+          </Link>
+        </HStack>
+
         <UnorderedList
           display="flex"
           justifyContent="space-between"
           flex="1"
-          maxW="80%"
+          maxW="60%"
           m={0}
           p={0}
           listStyleType="none"
@@ -77,7 +99,11 @@ export const Header: FC = () => {
       </Flex>
 
       {/* Mobile Hamburger Menu */}
-      <Flex justify="space-between" display={{ base: 'flex', md: 'none' }}>
+      <Flex
+        justify="space-between"
+        alignItems="center"
+        display={{ base: 'flex', md: 'none' }}
+      >
         <IconButton
           aria-label="Open Menu"
           icon={
@@ -92,6 +118,22 @@ export const Header: FC = () => {
           bg="transparent"
           _hover={{ bg: 'transparent' }}
         />
+        <Heading as="h1" size="lg" color="black">
+          <HStack spacing={2} align="center">
+            <Box w={10}>
+              <Img src={logo} />
+            </Box>
+            <Link
+              onClick={() => handleNavigation('/')}
+              textDecoration="none"
+              color="black"
+              textShadow="1px 1px 0 white, -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white"
+              _hover={{ textDecoration: 'none' }}
+            >
+              Interact Infinite
+            </Link>
+          </HStack>
+        </Heading>
 
         <Drawer
           isOpen={isOpen}
