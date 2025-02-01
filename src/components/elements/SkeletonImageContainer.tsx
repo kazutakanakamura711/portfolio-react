@@ -1,4 +1,6 @@
-import { Image, keyframes, Skeleton } from '@chakra-ui/react';
+import { Image, Skeleton } from '@chakra-ui/react';
+import { keyframes } from '@emotion/react';
+
 import { FC, useState } from 'react';
 
 const glitchAnimation = keyframes`

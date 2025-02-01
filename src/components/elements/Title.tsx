@@ -1,4 +1,5 @@
-import { Heading, keyframes } from '@chakra-ui/react';
+import { Heading } from '@chakra-ui/react';
+import { keyframes } from '@emotion/react';
 import { FC } from 'react';
 import { Parallax } from 'react-scroll-parallax';
 
