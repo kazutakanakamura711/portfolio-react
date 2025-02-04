@@ -81,7 +81,7 @@ export const Header: FC = () => {
             textShadow="1px 1px 0 white, -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white"
             _hover={{ textDecoration: 'none' }}
           >
-            Interact Infinite
+            Interact Infinity
           </Link>
         </HStack>
 
@@ -130,7 +130,7 @@ export const Header: FC = () => {
               textShadow="1px 1px 0 white, -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white"
               _hover={{ textDecoration: 'none' }}
             >
-              Interact Infinite
+              Interact Infinity
             </Link>
           </HStack>
         </Heading>
