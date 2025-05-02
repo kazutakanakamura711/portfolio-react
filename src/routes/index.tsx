@@ -1,6 +1,6 @@
 import { useRoutes } from 'react-router-dom';
 import { publicRoutes } from './publicRoutes';
-import { MainLayout } from '../components/layouts/mainLayout/MainLayout';
+import { MainLayout } from '@/layouts/main-layouts/main-layout';
 
 export const AppRoutes = () => {
   const element = useRoutes(publicRoutes);

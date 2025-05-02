@@ -1,7 +1,7 @@
-import { GalleryPage } from '../pages/gallery';
-import { ProfilePage } from '../pages/profile';
-import { TopPage } from '../pages/top';
-import { WorksPage } from '../pages/works';
+import { WorksPageContainer } from '@/pages/works';
+import { GalleryPageContainer } from '@/pages/gallery';
+import { TopPageContainer } from '@/pages/top';
+import { ProfilePageContainer } from '@/pages/profile';
 
 interface Route {
   label: string;
@@ -13,21 +13,21 @@ export const publicRoutes: Route[] = [
   {
     label: 'TOP',
     path: '/',
-    element: <TopPage />,
+    element: <TopPageContainer />,
   },
   {
     label: 'PROFILE',
     path: '/profile',
-    element: <ProfilePage />,
+    element: <ProfilePageContainer />,
   },
   {
     label: 'WORKS',
     path: '/works',
-    element: <WorksPage />,
+    element: <WorksPageContainer />,
   },
   {
     label: 'GALLERY',
     path: '/gallery',
-    element: <GalleryPage />,
+    element: <GalleryPageContainer />,
   },
 ];
