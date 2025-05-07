@@ -1,22 +1,21 @@
 import { Box, Stack } from '@chakra-ui/react';
 import { FC, ReactElement } from 'react';
 
-type Props = {
-  reverse?: boolean;
+export type ImageTextHorizontalWrapperProps = {
   children: [ReactElement, ReactElement]; // 子コンポーネントが2つであることを要求
+  isReverse?: boolean;
 };
 
-export const ImageTextHorizontalContainer: FC<Props> = ({
-  reverse,
-  children,
-}) => {
+export const ImageTextHorizontalWrapper: FC<
+  ImageTextHorizontalWrapperProps
+> = ({ children, isReverse }) => {
   return (
     <Stack
       spacing={4}
       mb={8}
       direction={{
         base: 'column-reverse',
-        md: reverse ? 'row-reverse' : 'row',
+        md: isReverse ? 'row-reverse' : 'row',
       }}
       alignItems="center"
       justifyContent="center"

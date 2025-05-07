@@ -45,7 +45,7 @@ const glitchAnimation = keyframes`
   }
 `;
 
-type Props = {
+export type SkeletonImageWrapperProps = {
   src: string;
   alt: string;
   aspectRatio?: number; // オプションでアスペクト比を指定できる
@@ -56,7 +56,7 @@ type Props = {
   isGlitch?: boolean; // グリッチエフェクトを付与するかどうか
 };
 
-export const SkeletonImageWrapper: FC<Props> = ({
+export const SkeletonImageWrapper: FC<SkeletonImageWrapperProps> = ({
   src,
   alt,
   aspectRatio,

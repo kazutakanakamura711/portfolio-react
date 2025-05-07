@@ -2,11 +2,11 @@ import { ChevronRightIcon } from '@chakra-ui/icons';
 import { HStack, Text } from '@chakra-ui/react';
 import { FC } from 'react';
 
-type Props = {
+export type TextArrowWrapperProps = {
   text: string;
 };
 
-export const TextArrowWrapper: FC<Props> = ({ text }) => {
+export const TextArrowWrapper: FC<TextArrowWrapperProps> = ({ text }) => {
   return (
     <HStack
       alignItems="center"

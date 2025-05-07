@@ -5,9 +5,10 @@ import crane from '@/assets/images/crane.png';
 import { Box, Text } from '@chakra-ui/react';
 import { SkeletonImageWrapper } from '@/shared/ui/skeleton-image-wrapper';
 import { Title } from '@/shared/ui/title/title';
-import { ImageTextHorizontalContainer } from '@/shared/ui/image-text-horizontal-wrapper/image-text-horizontal-wrapper';
+import { ImageTextHorizontalWrapper } from '@/shared/ui/image-text-horizontal-wrapper/image-text-horizontal-wrapper';
 import { Slider } from '@/shared/ui/slider';
 import { WorksData } from '@/shared/types';
+import { glitchAnimation } from '@/shared/ui/styles';
 
 type Props = {
   worksData: WorksData[];
@@ -24,7 +25,7 @@ export const Top = ({ worksData }: Props) => {
 
       <section>
         <Box textAlign="center" py={8} maxW="100vw" mx="auto">
-          <Title title="PROFILE" />
+          <Title title="PROFILE" isGlitch />
           <Box display="flex" justifyContent="center" mx="auto">
             <SkeletonImageWrapper
               src={profileImg}
@@ -42,8 +43,8 @@ export const Top = ({ worksData }: Props) => {
 
       <section>
         <Box textAlign="center" py={8} maxW="100vw" mx="auto">
-          <Title title="WORKS" />
-          <ImageTextHorizontalContainer>
+          <Title title="WORKS" isGlitch />
+          <ImageTextHorizontalWrapper>
             <Text mb={4}>
               実案件以外の制作物です。
               <br />
@@ -54,7 +55,7 @@ export const Top = ({ worksData }: Props) => {
             <Box>
               <SkeletonImageWrapper src={crane} alt="WORKSの画像" />
             </Box>
-          </ImageTextHorizontalContainer>
+          </ImageTextHorizontalWrapper>
 
           <Box mx={'auto'} w={'100%'} maxW={'768px'}>
             <Box mt={8}>
@@ -66,8 +67,10 @@ export const Top = ({ worksData }: Props) => {
 
       <section>
         <Box textAlign="center" py={8} maxW="100vw" mx="auto">
-          <Title title="GALLERY" />
-          <ImageTextHorizontalContainer>
+          <Box animation={`${glitchAnimation} 5s ease-in-out infinite`}>
+            <Title title="GALLERY" />
+          </Box>
+          <ImageTextHorizontalWrapper>
             <SkeletonImageWrapper src={gallery} alt="Galleryの画像" />
             <Box>
               <Text mb={4}>
@@ -76,7 +79,7 @@ export const Top = ({ worksData }: Props) => {
                 写真のコラージュを中心に制作しています。
               </Text>
             </Box>
-          </ImageTextHorizontalContainer>
+          </ImageTextHorizontalWrapper>
         </Box>
       </section>
     </Box>

@@ -45,11 +45,12 @@ const glitchAnimation = keyframes`
   }
 `;
 
-type Props = {
+export type TitleProps = {
   title: string;
+  isGlitch?: boolean;
 };
 
-export const Title: FC<Props> = ({ title }) => {
+export const Title: FC<TitleProps> = ({ title, isGlitch }) => {
   return (
     <Parallax translateY={[-80, 80]}>
       <Heading
@@ -57,7 +58,9 @@ export const Title: FC<Props> = ({ title }) => {
         size="lg"
         mb={8}
         letterSpacing="0.2em"
-        animation={`${glitchAnimation} 1s ease-in-out infinite`}
+        animation={
+          isGlitch ? `${glitchAnimation} 1s ease-in-out infinite` : 'none'
+        }
       >
         {title}
       </Heading>

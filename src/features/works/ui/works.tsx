@@ -1,6 +1,6 @@
 import { Box, Link, Text, VStack } from '@chakra-ui/react';
 import { SkeletonImageWrapper } from '@/shared/ui/skeleton-image-wrapper';
-import { ImageTextHorizontalContainer } from '@/shared/ui/image-text-horizontal-wrapper/image-text-horizontal-wrapper';
+import { ImageTextHorizontalWrapper } from '@/shared/ui/image-text-horizontal-wrapper/image-text-horizontal-wrapper';
 import { TextArrowWrapper } from '@/shared/ui/text-arrow-wrapper';
 import { Title } from '@/shared/ui/title/title';
 import { WorksData } from '@/shared/types';
@@ -15,7 +15,7 @@ export const Works = ({ worksData }: Props) => {
       <Title title="WORKS" />
 
       {worksData?.map((data, index) => (
-        <ImageTextHorizontalContainer key={index} reverse={index % 2 !== 0}>
+        <ImageTextHorizontalWrapper key={index} isReverse={index % 2 !== 0}>
           <VStack align="center" spacing={1}>
             <Link
               href={data.siteUrl}
@@ -42,7 +42,7 @@ export const Works = ({ worksData }: Props) => {
           <Link href={data.siteUrl} isExternal>
             <SkeletonImageWrapper src={data.src} alt={data.alt} />
           </Link>
-        </ImageTextHorizontalContainer>
+        </ImageTextHorizontalWrapper>
       ))}
     </Box>
   );

@@ -1,1 +1,1 @@
-export { ImageTextHorizontalContainer } from './image-text-horizontal-wrapper';
+export { ImageTextHorizontalWrapper } from './image-text-horizontal-wrapper';

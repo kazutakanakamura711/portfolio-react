@@ -9,11 +9,11 @@ import { WorksData } from '@/shared/types';
 import { TextArrowWrapper } from '@/shared/ui/text-arrow-wrapper';
 import { SkeletonImageWrapper } from '../skeleton-image-wrapper';
 
-type Props = {
+export type SliderProps = {
   slides: WorksData[];
 };
 
-export const Slider: FC<Props> = ({ slides }) => {
+export const Slider: FC<SliderProps> = ({ slides }) => {
   return (
     <Swiper
       spaceBetween={30}
