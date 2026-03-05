@@ -20,11 +20,12 @@ export const MainLayout: FC<MainLayoutProps> = ({
       {!isHideHeader && <HeaderContainer />}
       <main>
         <Box
+          color={'#333333'}
           backgroundImage={`url(${flowerPink})`}
           backgroundSize="10%" // 画像を画面横幅の10%に設定
           backgroundRepeat="repeat" // 繰り返し表示
           backgroundPosition="center" // 画像の位置を中央に設定
-          backgroundColor="rgba(255, 255, 255, 0.5)" // 背景色を半透明に設定
+          backgroundColor="rgba(255, 255, 255, 0.5)" // 背景色を半透明の白に設定
           backgroundBlendMode="overlay" // 背景色と画像を重ねる
           backgroundAttachment="fixed" // 背景画像を固定
         >
